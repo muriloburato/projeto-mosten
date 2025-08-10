@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Servir arquivos estáticos da pasta 'public'
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 const db = new sqlite3.Database(path.join(__dirname, 'movies.db'));
@@ -56,7 +56,7 @@ app.post('/items', (req, res) => {
   });
 });
 
-// PATCH /items/:id - atualiza parcialmente um item existente
+// PATCH /items/:id - atualiza  um item existente
 app.patch('/items/:id', (req, res) => {
   const id = req.params.id;
   const { titulo, genero, descricao, imagem } = req.body;
@@ -101,7 +101,7 @@ app.get('/votes/total', (req, res) => {
   });
 });
 
-// Rota fallback para index.html (single page app)
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
