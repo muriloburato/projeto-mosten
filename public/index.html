@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Votação Filmes & Séries</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Votação — Filmes & Séries</h1>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event,'vote')">Votação</button>
+      <button class="tab-btn" onclick="openTab(event,'add')">Adicionar Filme</button>
+    </div>
+
+    <div id="vote" class="tab-content" style="display: block;">
+      <div class="totals">
+        <div>Total Gostei: <span id="global-like">0</span></div>
+        <div>Total Não Gostei: <span id="global-dislike">0</span></div>
+      </div>
+      <section id="itemsSection" class="grid"></section>
+    </div>
+
+    <div id="add" class="tab-content" style="display: none;">
+      <form id="addForm" class="card form-card">
+        <h2>Cadastro de Filme/Série</h2>
+        <label>Título (obrigatório)
+          <input id="fldTitle" type="text" required />
+        </label>
+        <label>Gênero (obrigatório)
+          <input id="fldGenre" type="text" required />
+        </label>
+        <label>Imagem URL (obrigatório)
+          <input id="fldImage" type="text" required />
+        </label>
+        <label>Descrição (opcional)
+          <textarea id="fldDesc" rows="3"></textarea>
+        </label>
+        <button type="submit" class="btn-primary">Adicionar</button>
+        
+      </form>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+  <script>
+    function openTab(evt, tabId) {
+      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      evt.currentTarget.classList.add('active');
+      document.getElementById(tabId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

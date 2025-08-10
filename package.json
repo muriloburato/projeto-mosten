@@ -1,0 +1,15 @@
+{
+  "name": "projeto-mosten",
+  "version": "1.0.0",
+  "description": "API de vota\u00e7\u00e3o para filmes/s\u00e9ries com persist\u00eancia SQLite e frontend est\u00e1tico",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0",
+    "cors": "^2.8.5"
+  }
+}
